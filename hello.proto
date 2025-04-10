@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package hello;
+
+// The greeting service definition
+service HelloService {
+  // Sends multiple greeting messages
+  rpc SayHelloStream (HelloRequest) returns (stream HelloResponse) {}
+}
+
+// The request message containing the number of messages
+message HelloRequest {
+  int32 num_messages = 1;
+}
+
+// The response message containing the greeting
+message HelloResponse {
+  string message = 1;
+}
